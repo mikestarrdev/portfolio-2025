@@ -57,22 +57,22 @@ export default function App() {
 
   return (
     <div className="bg-[#0a192f] text-white font-[Inter]">
-      <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 md:pt-6 md:px-20 lg:px-12">
+      <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 lg:px-12 lg:text-lg">
         {/* Sidebar */}
-        <aside className="w-full md:sticky md:top-0 md:h-screen pt-12 md:pt-24 pb-6">
-          <div className="flex flex-col justify-between h-full max-w-md mx-auto">
+        <aside className="w-full lg:sticky lg:top-0 lg:h-screen pt-12 lg:pt-24 pb-6">
+          <div className="flex flex-col justify-between h-full lg:max-w-md mx-auto">
             <div className="space-y-10">
               {/* Top: Name, title, tagline */}
               <div className="space-y-4">
-                <h1 className="text-6xl font-extrabold">Mike Starr</h1>
-                <h2 className="text-2xl font-medium text-gray-300">Front End Engineer</h2>
-                <p className="text-gray-400 leading-relaxed text-xl">
-                  I build accessible, pixel-perfect digital experiences for the web.
+                <h1 className="text-4xl lg:text-6xl font-extrabold">Mike Starr</h1>
+                <h2 className="text-xl lg:text-2xl font-medium text-gray-300">Front End Engineer</h2>
+                <p className="text-gray-400 leading-relaxed lg:text-xl">
+                  I build accessible, pixel-perfect digital<br/> experiences for the web.
                 </p>
               </div>
 
               {/* Nav links */}
-              <nav className="hidden md:block space-y-6">
+              <nav className="hidden lg:block space-y-6 mt-24">
                 {sections.map(({ id, label }) => (
                   <div key={id} className="flex items-center space-x-4">
                     <span
@@ -93,7 +93,7 @@ export default function App() {
             </div>
 
             {/* Bottom: Social Icons */}
-            <div className="flex space-x-6 text-gray-400 text-2xl lg:mt-10 md:mt-0 lg:mb-12">
+            <div className="flex space-x-6 text-gray-400 text-2xl lg:text-4xl lg:mt-10 lg:mb-24">
               <a href="/" aria-label="GitHub"><FaGithub /></a>
               <a href="/" aria-label="LinkedIn"><FaLinkedin /></a>
               <a href="/" aria-label="Instagram"><FaInstagram /></a>
@@ -102,27 +102,24 @@ export default function App() {
         </aside>
 
         {/* Main */}
-        <main className="w-full pt-10 md:pt-24 pb-32 space-y-16">
+        <main className="w-full pt-10 lg:pt-24 pb-32 space-y-16">
           <section
             id="about"
             ref={(el) => {
               sectionRefs.current.about = el;
             }}
           >
-            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">About</h2>
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <br />
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <br />
-            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <h2 className="font-bold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10">About</h2>
+            <p className="text-gray-300 max-w-2xl leading-relaxed">
+              I’m a frontend developer who thrives at the intersection of engineering and marketing. I build fast, conversion-focused web experiences — from React-based interfaces to high-performing WordPress and Shopify landing pages — with a strong eye for performance, usability, and analytics.
+              </p>
+              <br />
+              <p className="text-gray-300 max-w-2xl leading-relaxed">
+              Most recently, I contributed to a trading platform that processed over $4B in volume and built internal tools for affiliate marketers to launch, test, and scale campaigns. My background includes technical work on ad funnels, attribution tracking, and UI development, making me especially valuable to performance-driven teams.
+              </p>
+              <br />
+              <p className="text-gray-300 max-w-2xl leading-relaxed">
+              Outside of coding, you’ll find me running desert trails, studying product strategy, or deep-diving into the latest in analytics and growth.
             </p>
           </section>
 
@@ -132,7 +129,7 @@ export default function App() {
               sectionRefs.current.experience = el;
             }}
           >
-            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
+            <h2 className="text-md font-bold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
             <div className="space-y-8">
               {[{
                 title: 'Web developer - RaidGuild',
@@ -145,11 +142,11 @@ export default function App() {
                 date: '2019 — 2021',
                 tech: ['TypeScript', 'Node.js'],
               }].map(({ title, description, date, tech }) => (
-                <div key={title} className="md:flex md:space-x-8 py-6 rounded-lg transition hover:bg-[#112240] cursor-pointer">
-                  <div className="w-full md:w-1/5 text-gray-400 text-sm mb-2 md:mb-0">{date}</div>
-                  <div className="w-full md:w-2/3">
-                    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                    <p className="text-gray-400 text-[15px] mb-2">{description}</p>
+                <div key={title} className="lg:flex lg:space-x-8 lg:p-6 text-md rounded-lg transition hover:bg-[#112240] cursor-pointer">
+                  <div className="w-full lg:w-1/5 text-gray-400 mb-2 lg:mb-0">{date}</div>
+                  <div className="w-full lg:w-2/3">
+                    <h3 className="text-md font-semibold mb-2">{title}</h3>
+                    <p className="text-gray-400 text-sm mb-2">{description}</p>
                     <div className="flex flex-wrap gap-2">
                       {tech.map(t => (
                         <span key={t} className="bg-[#0f2c3f] text-[#7dd3fc] text-xs font-medium px-3 py-1 rounded-full">{t}</span>
@@ -167,29 +164,29 @@ export default function App() {
               sectionRefs.current.projects = el;
             }}
           >
-            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
-            <div className="md:space-y-12">
+            <h2 className="text-md font-semibold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
+            <div className="lg:space-y-12">
               {projects.map((project) => (
                 <div
                   key={project.title}
-                  className="flex flex-col md:flex-row md:items-start md:space-x-8 py-6 rounded-lg transition hover:bg-[#112240] cursor-pointer"
+                  className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 py-6 lg:p-6 rounded-lg transition hover:bg-[#112240] cursor-pointer"
                 >
                   {/* div is only used to reposition the image on mobile */}
-                  <div className='flex flex-col-reverse md:flex-row'>
+                  <div className='flex flex-col-reverse lg:flex-row'>
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-1/2 md:w-1/5 rounded shadow-lg my-4 md:mb-0"
+                      className="w-1/2 lg:w-1/5 rounded shadow-lg my-4 lg:mb-0 mr-6"
                     />
-                    <div className="md:w-2/3">
-                      <h3 className="text-xl font-semibold mb-2 flex items-center">
+                    <div>
+                      <h3 className="font-semibold mb-2 flex items-center">
                         {project.title}
                       </h3>
-                      <p className="text-gray-400 text-[15px] mb-3">
+                      <p className="text-gray-400 text-sm mb-3">
                         {project.description}
                       </p>
                       {project.stars && (
-                        <p className="text-sm text-gray-400 mb-2">
+                        <p className="text-gray-400 mb-2">
                           <span className="inline-block mr-1">⭐</span>
                           {project.stars}
                         </p>
