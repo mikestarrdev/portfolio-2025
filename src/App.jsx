@@ -46,10 +46,10 @@ export default function App() {
         <aside className="w-full md:w-1/2 px-6 sm:px-10 md:px-12 pt-12 md:pt-24 pb-16 md:sticky md:top-0 md:h-screen flex flex-col md:justify-between">
           {/* Top: Name, title, tagline */}
           <div className="space-y-4">
-            <h1 className="text-4xl font-extrabold">Mike Starr</h1>
-            <h2 className="text-lg font-medium text-gray-300">Front End Engineer</h2>
-            <p className="text-gray-400 leading-relaxed text-[15px]">
-              I build accessible, pixel-perfect digital experiences for the web.
+            <h1 className="text-6xl font-extrabold">Mike Starr</h1>
+            <h2 className="text-2xl font-medium text-gray-300">Front End Engineer</h2>
+            <p className="text-gray-400 leading-relaxed text-xl">
+              I build accessible, pixel-perfect digital <br/> experiences for the web.
             </p>
           </div>
 
