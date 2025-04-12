@@ -16,7 +16,7 @@ const projects = [
     title: 'Spotify Clone',
     description:
       'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.',
-    image: '/spotify-clone.jpg',
+    image: '/placeholder.png',
     stars: 677,
     tech: ['React', 'Express', 'Spotify API', 'Heroku'],
   },
@@ -24,7 +24,7 @@ const projects = [
     title: 'Portfolio Site',
     description:
       'This website you’re viewing. Built with Tailwind, hosted on Netlify.',
-    image: '/portfolio.jpg',
+    image: '/placeholder.png',
     tech: ['React', 'Tailwind', 'Netlify'],
   },
 ];
@@ -59,7 +59,7 @@ export default function App() {
     <div className="bg-[#0a192f] text-white font-[Inter]">
       <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 md:pt-6 md:px-20 lg:px-12">
         {/* Sidebar */}
-        <aside className="w-full md:sticky md:top-0 md:h-screen pt-12 md:pt-24 pb-16">
+        <aside className="w-full md:sticky md:top-0 md:h-screen pt-12 md:pt-24 pb-6">
           <div className="flex flex-col justify-between h-full max-w-md mx-auto">
             <div className="space-y-10">
               {/* Top: Name, title, tagline */}
@@ -102,7 +102,7 @@ export default function App() {
         </aside>
 
         {/* Main */}
-        <main className="w-full pt-10 md:pt-24 pb-32 space-y-32">
+        <main className="w-full pt-10 md:pt-24 pb-32 space-y-16">
           <section
             id="about"
             ref={(el) => {
@@ -135,18 +135,18 @@ export default function App() {
             <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
             <div className="space-y-8">
               {[{
-                title: 'Role One',
+                title: 'Web developer - RaidGuild',
                 description: 'Some description about the role and achievements.',
                 date: '2021 — Present',
                 tech: ['JavaScript', 'React'],
               }, {
-                title: 'Role Two',
+                title: 'Frontend Developer - AirSwap',
                 description: 'Another role with key contributions and tools.',
                 date: '2019 — 2021',
                 tech: ['TypeScript', 'Node.js'],
               }].map(({ title, description, date, tech }) => (
-                <div key={title} className="md:flex md:space-x-8 p-6 rounded-lg transition hover:bg-[#112240] cursor-pointer">
-                  <div className="w-full md:w-1/3 text-gray-400 text-sm mb-2 md:mb-0">{date}</div>
+                <div key={title} className="md:flex md:space-x-8 py-6 rounded-lg transition hover:bg-[#112240] cursor-pointer">
+                  <div className="w-full md:w-1/5 text-gray-400 text-sm mb-2 md:mb-0">{date}</div>
                   <div className="w-full md:w-2/3">
                     <h3 className="text-xl font-semibold mb-2">{title}</h3>
                     <p className="text-gray-400 text-[15px] mb-2">{description}</p>
@@ -168,39 +168,42 @@ export default function App() {
             }}
           >
             <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
-            <div className="space-y-12">
+            <div className="md:space-y-12">
               {projects.map((project) => (
                 <div
                   key={project.title}
-                  className="flex flex-col md:flex-row md:items-start md:space-x-8 p-6 rounded-lg transition hover:bg-[#112240] cursor-pointer"
+                  className="flex flex-col md:flex-row md:items-start md:space-x-8 py-6 rounded-lg transition hover:bg-[#112240] cursor-pointer"
                 >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full md:w-1/3 rounded shadow-lg mb-4 md:mb-0"
-                  />
-                  <div className="md:w-2/3">
-                    <h3 className="text-xl font-semibold mb-2 flex items-center">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-[15px] mb-3">
-                      {project.description}
-                    </p>
-                    {project.stars && (
-                      <p className="text-sm text-gray-400 mb-2">
-                        <span className="inline-block mr-1">⭐</span>
-                        {project.stars}
+                  {/* div is only used to reposition the image on mobile */}
+                  <div className='flex flex-col-reverse md:flex-row'>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-1/2 md:w-1/5 rounded shadow-lg my-4 md:mb-0"
+                    />
+                    <div className="md:w-2/3">
+                      <h3 className="text-xl font-semibold mb-2 flex items-center">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-400 text-[15px] mb-3">
+                        {project.description}
                       </p>
-                    )}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-[#0f2c3f] text-[#7dd3fc] text-xs font-medium px-3 py-1 rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      {project.stars && (
+                        <p className="text-sm text-gray-400 mb-2">
+                          <span className="inline-block mr-1">⭐</span>
+                          {project.stars}
+                        </p>
+                      )}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="bg-[#0f2c3f] text-[#7dd3fc] text-xs font-medium px-3 py-1 rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
