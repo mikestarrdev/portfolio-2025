@@ -54,16 +54,16 @@ export default function App() {
           </div>
 
           {/* Middle: Nav links (desktop only) */}
-          <nav className="hidden md:mt-10 md:flex md:flex-col md:space-y-6">
+          <nav className="hidden md:block mt-10 space-y-6">
             {sections.map(({ id, label }) => (
-              <div key={id} className="relative">
+              <div key={id} className="flex items-center space-x-4">
                 <span
-                  className={`block transition-all duration-300 h-0.5 w-6 bg-gray-400${
-                    active === id ? ' w-12 ml-2 bg-white' : ' ml-0'
+                  className={`h-px transition-all duration-300 bg-gray-400 ${
+                    active === id ? 'w-12 bg-white' : 'w-6'
                   }`}
                 />
                 <span
-                  className={`block text-sm font-medium tracking-widest uppercase mt-1 ${
+                  className={`text-sm font-medium tracking-widest uppercase transition-colors duration-300 ${
                     active === id ? 'text-white' : 'text-gray-400'
                   }`}
                 >
@@ -73,13 +73,12 @@ export default function App() {
             ))}
           </nav>
 
+
           {/* Bottom: Social Icons */}
           <div className="mt-10 flex space-x-6 text-gray-400 text-xl">
-            <a href="#" aria-label="GitHub"><FaGithub /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-            <a href="#" aria-label="Codepen"><SiCodepen /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="Goodreads"><FaGoodreads /></a>
+            <a href="/" aria-label="GitHub"><FaGithub /></a>
+            <a href="/" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="/" aria-label="Instagram"><FaInstagram /></a>
           </div>
         </aside>
 
@@ -96,6 +95,16 @@ export default function App() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
+            <br />
+            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <br />
+            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
           </section>
 
           <section
@@ -107,8 +116,8 @@ export default function App() {
             <h2 className="text-3xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
             <div className="space-y-8">
               {[
-                { title: 'Role One', description: 'Some brief description about the role, achievements, or stack used.' },
-                { title: 'Role Two', description: 'Some brief description about the role, achievements, or stack used.' },
+                { title: 'Role One', description: 'Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used Some brief description about the role, achievements, or stack used.' },
+                { title: 'Role Two', description: 'Some brief descriptionSome brief descriptioSome brief description about the role, achievements, or stack usedn about the role, achievements, or stack used about the role, achievements, or stack used. Some brief description about the role, achievements, or stack used. Some brief description about the role, achievements, or stack used. Some brief description about the role, achievements, or stack used' },
               ].map(({ title, description }) => (
                 <div className="p-6 rounded transition-colors duration-300 hover:bg-gray-800" key={title}>
                   <h3 className="text-xl font-semibold">{title}</h3>
@@ -127,7 +136,7 @@ export default function App() {
             <h2 className="text-3xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
             <div className="space-y-8">
               {[
-                { title: 'Spotify Clone', description: 'Short summary of the project and the tech stack used.' },
+                { title: 'Spotify Clone', description: 'Short summary of the project and the tech stack used. Short summary of the project and the tech stack used. Short summary of the project and the tech stack used.' },
                 { title: 'Portfolio Site', description: 'Short summary of the project and the tech stack used.' },
               ].map(({ title, description }) => (
                 <div className="p-6 rounded transition-colors duration-300 hover:bg-gray-800" key={title}>
