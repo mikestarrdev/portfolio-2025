@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-  FaGoodreads,
 } from 'react-icons/fa';
 
 const sections = [
@@ -58,42 +57,43 @@ export default function App() {
 
   return (
     <div className="bg-[#0a192f] text-white font-[Inter]">
-      <div className="flex flex-col md:flex-row max-w-8xl mx-auto md:pt-6">
+      <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 md:pt-6 md:px-20 lg:px-12">
         {/* Sidebar */}
-        <aside className="flex flex-col md:w-1/2 px-6 sm:px-10 md:px-12 pt-12 md:pt-24 pb-16 md:sticky md:top-0 md:h-screen">
-        {/* aside inner div */}
-          <div className="md:justify-between md:h-screen w-full xl:w-3/4 2xl:w-1/2 mx-auto">
-          {/* Top: Name, title, tagline */}
-            <div className="space-y-4">
-              <h1 className="text-6xl font-extrabold">Mike Starr</h1>
-              <h2 className="text-2xl font-medium text-gray-300">Front End Engineer</h2>
-              <p className="text-gray-400 leading-relaxed text-xl">
-                I build accessible, pixel-perfect digital <br /> experiences for the web.
-              </p>
+        <aside className="w-full md:sticky md:top-0 md:h-screen pt-12 md:pt-24 pb-16">
+          <div className="flex flex-col justify-between h-full max-w-md mx-auto">
+            <div className="space-y-10">
+              {/* Top: Name, title, tagline */}
+              <div className="space-y-4">
+                <h1 className="text-6xl font-extrabold">Mike Starr</h1>
+                <h2 className="text-2xl font-medium text-gray-300">Front End Engineer</h2>
+                <p className="text-gray-400 leading-relaxed text-xl">
+                  I build accessible, pixel-perfect digital experiences for the web.
+                </p>
+              </div>
+
+              {/* Nav links */}
+              <nav className="hidden md:block space-y-6">
+                {sections.map(({ id, label }) => (
+                  <div key={id} className="flex items-center space-x-4">
+                    <span
+                      className={`h-px transition-all duration-300 bg-gray-400 ${
+                        active === id ? 'w-12 bg-white' : 'w-6'
+                      }`}
+                    />
+                    <span
+                      className={`text-sm font-medium tracking-widest uppercase transition-colors duration-300 ${
+                        active === id ? 'text-white' : 'text-gray-400'
+                      }`}
+                    >
+                      {label}
+                    </span>
+                  </div>
+                ))}
+              </nav>
             </div>
 
-            {/* Middle: Nav links (desktop only) */}
-            <nav className="hidden md:block mt-10 space-y-6">
-              {sections.map(({ id, label }) => (
-                <div key={id} className="flex items-center space-x-4">
-                  <span
-                    className={`h-px transition-all duration-300 bg-gray-400 ${
-                      active === id ? 'w-12 bg-white' : 'w-6'
-                    }`}
-                  />
-                  <span
-                    className={`text-sm font-medium tracking-widest uppercase transition-colors duration-300 ${
-                      active === id ? 'text-white' : 'text-gray-400'
-                    }`}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </nav>
-
             {/* Bottom: Social Icons */}
-            <div className="mt-10 flex space-x-6 text-gray-400 text-xl">
+            <div className="flex space-x-6 text-gray-400 text-2xl lg:mt-10 md:mt-0 lg:mb-12">
               <a href="/" aria-label="GitHub"><FaGithub /></a>
               <a href="/" aria-label="LinkedIn"><FaLinkedin /></a>
               <a href="/" aria-label="Instagram"><FaInstagram /></a>
@@ -102,7 +102,7 @@ export default function App() {
         </aside>
 
         {/* Main */}
-        <main className=" w-full md:w-1/2 px-6 sm:px-10 md:px-0 pt-10 md:pt-24 pb-32 space-y-32">
+        <main className="w-full pt-10 md:pt-24 pb-32 space-y-32">
           <section
             id="about"
             ref={(el) => {
