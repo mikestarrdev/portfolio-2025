@@ -12,6 +12,24 @@ const sections = [
   { id: 'projects', label: 'Projects' },
 ];
 
+const projects = [
+  {
+    title: 'Spotify Clone',
+    description:
+      'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.',
+    image: '/spotify-clone.jpg',
+    stars: 677,
+    tech: ['React', 'Express', 'Spotify API', 'Heroku'],
+  },
+  {
+    title: 'Portfolio Site',
+    description:
+      'This website you’re viewing. Built with Tailwind, hosted on Netlify.',
+    image: '/portfolio.jpg',
+    tech: ['React', 'Tailwind', 'Netlify'],
+  },
+];
+
 export default function App() {
   const sectionRefs = useRef({});
   const [active, setActive] = useState('about');
@@ -52,7 +70,7 @@ export default function App() {
             </p>
           </div>
 
-          {/* Nav (Desktop Only) */}
+          {/* Middle: Nav links (desktop only) */}
           <nav className="hidden md:block mt-10 space-y-6">
             {sections.map(({ id, label }) => (
               <div key={id} className="flex items-center space-x-4">
@@ -72,7 +90,7 @@ export default function App() {
             ))}
           </nav>
 
-          {/* Social Icons */}
+          {/* Bottom: Social Icons */}
           <div className="mt-10 flex space-x-6 text-gray-400 text-xl">
             <a href="/" aria-label="GitHub"><FaGithub /></a>
             <a href="/" aria-label="LinkedIn"><FaLinkedin /></a>
@@ -82,62 +100,56 @@ export default function App() {
 
         {/* Main */}
         <main className="w-full md:w-1/2 px-6 sm:px-10 md:px-12 pt-10 md:pt-24 pb-32 space-y-32">
-          {/* About */}
-          <section id="about" ref={(el) => (sectionRefs.current.about = el)}>
-            <h2 className="text-3xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">About</h2>
+          <section
+            id="about"
+            ref={(el) => {
+              sectionRefs.current.about = el;
+            }}
+          >
+            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">About</h2>
             <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <br />
             <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              In my spare time, I’m usually trail running, rock climbing, or deep diving on web dev projects and design systems.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <br />
+            <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
           </section>
 
-          {/* Experience */}
-          <section id="experience" ref={(el) => (sectionRefs.current.experience = el)}>
-            <h2 className="text-3xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
-            <div className="space-y-12">
-              {[
-                {
-                  title: 'Frontend Engineer · Example Co',
-                  date: '2022 — Present',
-                  description: 'Worked on React components and accessibility-focused design systems.',
-                  stack: ['React', 'Tailwind', 'JavaScript'],
-                },
-                {
-                  title: 'Web Developer · Agency XYZ',
-                  date: '2020 — 2022',
-                  description: 'Built websites and landing pages for clients. Integrated WordPress themes.',
-                  stack: ['HTML', 'CSS', 'WordPress', 'PHP'],
-                },
-                {
-                  title: 'Intern Developer · Startup Hub',
-                  date: '2019 — 2020',
-                  description: 'Helped build a marketing dashboard and contributed to frontend UI polish.',
-                  stack: ['Vue', 'Sass', 'Firebase'],
-                },
-                {
-                  title: 'Freelancer · Various Clients',
-                  date: '2018 — 2019',
-                  description: 'Built custom websites for local businesses and optimized for SEO.',
-                  stack: ['Bootstrap', 'JavaScript', 'cPanel'],
-                },
-              ].map(({ title, date, description, stack }) => (
-                <div key={title} className="md:flex md:space-x-6">
-                  <div className="w-32 text-sm text-gray-400 shrink-0">{date}</div>
-                  <div>
-                    <h3 className="text-lg font-semibold">{title}</h3>
-                    <p className="text-gray-400 mt-2 text-[15px] leading-relaxed">{description}</p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-gray-800 text-sm px-2.5 py-1 rounded-full text-white font-medium"
-                        >
-                          {tech}
-                        </span>
+          <section
+            id="experience"
+            ref={(el) => {
+              sectionRefs.current.experience = el;
+            }}
+          >
+            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Experience</h2>
+            <div className="space-y-8">
+              {[{
+                title: 'Role One',
+                description: 'Some description about the role and achievements.',
+                date: '2021 — Present',
+                tech: ['JavaScript', 'React'],
+              }, {
+                title: 'Role Two',
+                description: 'Another role with key contributions and tools.',
+                date: '2019 — 2021',
+                tech: ['TypeScript', 'Node.js'],
+              }].map(({ title, description, date, tech }) => (
+                <div key={title} className="md:flex md:space-x-8">
+                  <div className="w-full md:w-1/3 text-gray-400 text-sm mb-2 md:mb-0">{date}</div>
+                  <div className="w-full md:w-2/3">
+                    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                    <p className="text-gray-400 text-[15px] mb-2">{description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {tech.map(t => (
+                        <span key={t} className="bg-[#0f2c3f] text-[#7dd3fc] text-xs font-medium px-3 py-1 rounded-full">{t}</span>
                       ))}
                     </div>
                   </div>
@@ -146,56 +158,49 @@ export default function App() {
             </div>
           </section>
 
-          {/* Projects */}
-          <section id="projects" ref={(el) => (sectionRefs.current.projects = el)}>
-            <h2 className="text-3xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
-            <div className="space-y-8">
-              {[
-                {
-                  title: 'Spotify Clone',
-                  description: 'A full-stack clone of Spotify with user login and playlist UI.',
-                  url: '#',
-                  stack: ['React', 'Express', 'Spotify API', 'Heroku'],
-                },
-                {
-                  title: 'Halcyon Theme',
-                  description: 'Minimal dark VS Code theme with over 100k installs.',
-                  url: '#',
-                  stack: ['VS Code', 'JSON'],
-                },
-                {
-                  title: 'Portfolio Site',
-                  description: 'This website you’re viewing. Built with Tailwind, hosted on Netlify.',
-                  url: '#',
-                  stack: ['React', 'Tailwind', 'Netlify'],
-                },
-                {
-                  title: 'AI Art Gallery',
-                  description: 'Showcase of AI-generated artwork using Stable Diffusion.',
-                  url: '#',
-                  stack: ['Next.js', 'Tailwind', 'Replicate'],
-                },
-              ].map(({ title, description, stack, url }) => (
-                <a
-                  key={title}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-6 rounded-lg hover:bg-gray-800 transition duration-300 group"
+          <section
+            id="projects"
+            ref={(el) => {
+              sectionRefs.current.projects = el;
+            }}
+          >
+            <h2 className="text-xl font-bold md:hidden sticky top-0 bg-[#0a192f] py-4 z-10">Projects</h2>
+            <div className="space-y-12">
+              {projects.map((project) => (
+                <div
+                  key={project.title}
+                  className="flex flex-col md:flex-row md:items-start md:space-x-8"
                 >
-                  <h3 className="text-lg font-semibold group-hover:text-teal-400 transition">{title}</h3>
-                  <p className="text-gray-400 mt-2 text-[15px] leading-relaxed">{description}</p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gray-800 text-sm px-2.5 py-1 rounded-full text-white font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full md:w-1/3 rounded shadow-lg mb-4 md:mb-0"
+                  />
+                  <div className="md:w-2/3">
+                    <h3 className="text-xl font-semibold mb-2 flex items-center">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 text-[15px] mb-3">
+                      {project.description}
+                    </p>
+                    {project.stars && (
+                      <p className="text-sm text-gray-400 mb-2">
+                        <span className="inline-block mr-1">⭐</span>
+                        {project.stars}
+                      </p>
+                    )}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-[#0f2c3f] text-[#7dd3fc] text-xs font-medium px-3 py-1 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </section>
