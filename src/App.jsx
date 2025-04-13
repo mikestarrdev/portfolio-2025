@@ -1,9 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
 } from 'react-icons/fa';
+import useActiveNavLink from './hooks/useActiveNavLink';
 
 const sections = [
   { id: 'about', label: 'About' },
@@ -61,29 +62,9 @@ const projects = [
 
 export default function App() {
   const sectionRefs = useRef({});
-  const [active, setActive] = useState('about');
+  const [activeSection, setActiveSection] = useState('about');
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        }
-      },
-      { rootMargin: '-40% 0px -60% 0px', threshold: 0.1 }
-    );
-
-    for (const section of sections) {
-      const ref = sectionRefs.current[section.id];
-      if (ref) {
-        observer.observe(ref);
-      }
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  useActiveNavLink(sectionRefs, setActiveSection);
 
   return (
     <div className="bg-[#0a192f] text-[#8892b0] font-inter">
@@ -107,14 +88,13 @@ export default function App() {
                   <div key={id} className="flex items-center space-x-4">
                     <span
                       className={`h-px transition-all duration-300 bg-gray-400 ${
-                        active === id ? 'w-12 bg-white' : 'w-6'
+                        activeSection === id ? 'w-12 bg-white' : 'w-6'
                       }`}
                     />
                     <span
                       className={`text-xs font-medium tracking-widest uppercase transition-colors duration-300 ${
-                        active === id ? 'text-white' : 'text-gray-400'
-                      }`}
-                    >
+                        activeSection === id ? 'text-white' : 'text-[#8892b0]'
+                      }`}>
                       {label}
                     </span>
                   </div>
@@ -132,7 +112,7 @@ export default function App() {
         </aside>
 
         {/* Main */}
-        <main className="w-full pt-14 lg:pt-22 pb-32 space-y-16 xl:pr-16">
+        <main className="w-full xl:w-4/5 pt-14 lg:pt-22 pb-32 space-y-16 xl:pr-16">
           <section
             id="about"
             ref={(el) => {
@@ -140,7 +120,7 @@ export default function App() {
             }}
           >
             <h2 className="lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10 text-[#ccd6f6] font-semibold">About</h2>
-            <p className="mt-6 text-base">
+            <p className="mt-6 md:mt-0 text-base">
               I’m a frontend developer who thrives at the intersection of engineering and marketing. I build fast, conversion-focused web experiences — from React-based interfaces to high-performing WordPress and Shopify landing pages — with a strong eye for performance, usability, and analytics.
             </p>
             <br />
