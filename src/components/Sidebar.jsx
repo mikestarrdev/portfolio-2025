@@ -9,7 +9,7 @@ export const Sidebar = ({
 }) => {
   return (
     <aside className="w-full pt-14 pb-6 lg:sticky lg:top-0 lg:h-screen lg:pt-22">
-      <div className="mx-auto flex h-full flex-col justify-between lg:max-w-md">
+      <div className="flex h-full flex-col justify-between pr-8 pl-4 lg:max-w-md lg:pr-0 xl:pl-30">
         <div className="space-y-10">
           <div className="space-y-4">
             <h1 className="text-4xl font-extrabold text-[#ccd6f6] md:text-5xl">Mike Starr</h1>

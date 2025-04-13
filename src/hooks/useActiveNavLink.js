@@ -4,11 +4,11 @@ export default function useActiveNavLink(sectionRefs, setActiveSection) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
-        entries.forEach(entry => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id)
           }
-        })
+        }
       },
       {
         // Fires when top of the section hits 20% from top of viewport
@@ -17,9 +17,9 @@ export default function useActiveNavLink(sectionRefs, setActiveSection) {
       }
     )
 
-    Object.values(sectionRefs.current).forEach(ref => {
+    for (const ref of Object.values(sectionRefs.current)) {
       if (ref) observer.observe(ref)
-    })
+    }
 
     return () => observer.disconnect()
   }, [sectionRefs, setActiveSection])
