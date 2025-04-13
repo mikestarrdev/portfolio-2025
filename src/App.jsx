@@ -37,18 +37,25 @@ const experience = [
 
 const projects = [
   {
-    title: 'Spotify Clone',
+    title: 'Web App',
     description:
-      'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.',
+      'Exchange which has processed over $4B in trading volume. I built new features on the app',
     image: '/placeholder.png',
     tech: ['React', 'Express', 'Spotify API', 'Heroku'],
   },
   {
-    title: 'Portfolio Site',
+    title: 'Member Dashboard',
     description:
-      'This website you’re viewing. Built with Tailwind, hosted on Netlify.',
+      'Exchange which has processed over $4B in trading volume. I built new features on the app',
     image: '/placeholder.png',
-    tech: ['React', 'Tailwind', 'Netlify'],
+    tech: ['React', 'Express', 'Spotify API', 'Heroku'],
+  },
+  {
+    title: 'AirSwap Debugger',
+    description:
+      'UI for market makers to debug their API connections',
+    image: '/placeholder.png',
+    tech: ['React', 'Express', 'Spotify API', 'Heroku'],
   },
 ];
 
@@ -80,9 +87,9 @@ export default function App() {
 
   return (
     <div className="bg-[#0a192f] text-[#8892b0] font-inter">
-      <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 lg:px-12 lg:text-lg sm:pt-5">
+      <div className="flex flex-col lg:flex-row max-w-8xl mx-auto px-6 sm:px-10 lg:px-12 lg:text-lg">
         {/* Sidebar */}
-        <aside className="w-full lg:sticky lg:top-0 lg:h-screen pt-12 lg:pt-24 pb-6">
+        <aside className="w-full lg:sticky lg:top-0 lg:h-screen pt-14 lg:pt-22 pb-6">
           <div className="flex flex-col justify-between h-full lg:max-w-md mx-auto">
             <div className="space-y-10">
               {/* Top: Name, title, tagline */}
@@ -125,23 +132,23 @@ export default function App() {
         </aside>
 
         {/* Main */}
-        <main className="w-full pt-10 lg:pt-24 pb-32 space-y-16 xl:pr-16">
+        <main className="w-full pt-14 lg:pt-22 pb-32 space-y-16 xl:pr-16">
           <section
             id="about"
             ref={(el) => {
               sectionRefs.current.about = el;
             }}
           >
-            <h2 className="font-semibold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10 text-[#ccd6f6]">About</h2>
-            <p className="mt-6">
+            <h2 className="lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10 text-[#ccd6f6] font-semibold">About</h2>
+            <p className="mt-6 text-base">
               I’m a frontend developer who thrives at the intersection of engineering and marketing. I build fast, conversion-focused web experiences — from React-based interfaces to high-performing WordPress and Shopify landing pages — with a strong eye for performance, usability, and analytics.
-              </p>
-              <br />
-              <p>
+            </p>
+            <br />
+            <p className="text-base">
               Most recently, I contributed to a trading platform that processed over $4B in volume and built internal tools for affiliate marketers to launch, test, and scale campaigns. My background includes technical work on ad funnels, attribution tracking, and UI development, making me especially valuable to performance-driven teams.
-              </p>
-              <br />
-              <p>
+            </p>
+            <br />
+            <p className="text-base">
               Outside of coding, you’ll find me climbing mountains, running trails, using the latest AI tools, studying product strategy, or deep-diving into analytics and growth.
             </p>
           </section>
@@ -153,7 +160,7 @@ export default function App() {
             }}
           >
             <h2 className="text-md font-bold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10 text-[#ccd6f6]">Experience</h2>
-            <div className="mt-6 space-y-12 md:space-y-8-2">
+            <div className="flex flex-col mt-6 space-y-12 md:space-y-4">
               {experience.map(({ title, description, date, tech }) => (
                 <div key={title} className="flex flex-col sm:flex-row sm:space-x-8 lg:p-6 lg:-ml-6 rounded-lg transition hover:bg-[#112240] cursor-pointer">
                   <div className="w-full sm:w-2/5 md:w-3/10 text-gray-400 mb-2 lg:mb-0 text-sm lg:text-sm">{date}</div>
@@ -178,20 +185,20 @@ export default function App() {
             }}
           >
             <h2 className="text-md font-semibold lg:hidden sticky top-0 bg-[#0a192f] py-4 z-10 text-[#ccd6f6]">Projects</h2>
-            <div className="lg:space-y-12">
+            <div className="lg:space-y-4">
               {projects.map((project) => (
                 <div
                   key={project.title}
                   className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 py-6 lg:p-6 lg:-ml-6 rounded-lg transition hover:bg-[#112240] cursor-pointer"
                 >
                   {/* div is only used to reposition the image on mobile */}
-                  <div className='flex flex-col-reverse lg:flex-row'>
+                  <div className="flex flex-col-reverse md:flex-row w-full">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="max-h-[150px] max-w-[275px] w-1/2 lg:w-1/5 rounded shadow-lg my-4 lg:mb-0 mr-6"
+                      className="flex mt-1 w-1/2 md:w-1/4 h-[100px] rounded shadow-lg my-4 lg:mb-0 mr-6"
                     />
-                    <div>
+                    <div className="md:max-w-4/5">
                       <h3 className="font-semibold mb-2 flex items-center text-[#ccd6f6]">
                         {project.title}
                       </h3>
@@ -213,6 +220,11 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </section>
+          <section>
+            <p className="w-full md:w-4/5 text-sm">
+              This site was coded in Cursor by yours truly. Built with Vite and TailwindCSS, deployed with Vercel. All text is set in the Inter typeface.
+            </p>
           </section>
         </main>
       </div>
