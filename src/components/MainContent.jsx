@@ -1,4 +1,4 @@
-import { About } from './sections/about'
+import { About } from './sections/About'
 import { Experience } from './sections/Experience'
 import { Projects } from './sections/Projects'
 
