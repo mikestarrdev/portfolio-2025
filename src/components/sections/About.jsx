@@ -30,6 +30,17 @@ export const About = ({ sectionRefs }) => {
         <br />
 
         <p className="text-base">
+          I completed a <span className="text-[#ccd6f6]">full-stack coding bootcamp</span> in 2022,
+          where I logged over <span className="text-[#ccd6f6]">600 hours</span> of hands-on
+          coursework. It gave me a comprehensive, practical understanding of how the entire stack
+          fits together — from building responsive UIs with{' '}
+          <span className="text-[#ccd6f6]">React</span>, to managing backend logic with{' '}
+          <span className="text-[#ccd6f6]">Node.js</span> and APIs.
+        </p>
+
+        <br />
+
+        <p className="text-base">
           Most recently, I contributed to a trading platform that processed over{' '}
           <span className="text-[#ccd6f6]">$4B in volume</span>, building internal tools to help
           affiliate marketers{' '}

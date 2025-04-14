@@ -1,4 +1,5 @@
 import { projects } from '../../data/projects'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 export const Projects = ({ sectionRefs }) => {
   return (
@@ -16,20 +17,56 @@ export const Projects = ({ sectionRefs }) => {
           {projects.map(project => (
             <div
               key={project.title}
-              className="flex cursor-pointer flex-col rounded-lg py-6 transition hover:bg-[#112240] lg:-ml-6 lg:flex-row lg:items-start lg:space-x-8 lg:p-6"
+              className="flex flex-col rounded-lg py-6 transition hover:bg-[#112240] lg:-ml-6 lg:flex-row lg:items-start lg:space-x-8 lg:p-6"
             >
-              {/* div is only used to reposition the image on mobile */}
-              <div className="flex w-full flex-col-reverse md:flex-row">
+              {/* Image and content layout */}
+              <div className="flex w-full flex-col-reverse transition-transform hover:scale-[1.01] md:flex-row">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="my-4 mt-1 mr-6 flex h-[100px] w-1/2 rounded shadow-lg md:w-1/4 lg:mb-0"
+                  className="my-4 mt-1 mr-6 aspect-[4/3] w-1/2 rounded object-cover shadow-lg md:w-1/4 lg:mb-0"
                 />
                 <div className="md:max-w-4/5">
                   <h3 className="mb-2 flex items-center font-semibold text-[#ccd6f6]">
                     {project.title}
                   </h3>
-                  <p className="mb-3 text-sm text-gray-400">{project.description}</p>
+                  <p className="mb-2 text-sm text-gray-400">{project.description}</p>
+
+                  {/* External links */}
+                  <div className="mb-2 flex flex-wrap gap-4 text-xs text-[#7dd3fc]">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:underline"
+                      >
+                        GitHub <FaExternalLinkAlt className="h-[10px] w-[10px]" />
+                      </a>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:underline"
+                      >
+                        App <FaExternalLinkAlt className="h-[10px] w-[10px]" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:underline"
+                      >
+                        Demo <FaExternalLinkAlt className="h-[10px] w-[10px]" />
+                      </a>
+                    )}
+                  </div>
+
+                  {/* Tech stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map(tech => (
                       <span
