@@ -2,9 +2,9 @@ export const projects = [
   {
     title: 'Wordpress Landing Page System',
     description:
-      'Trading platform with over $4B in total volume. Contributed features and maintained the core interface.',
+      'Built a reusable WordPress + Elementor system to rapidly create both WooCommerce stores and high-converting squeeze pages.',
     image: '/am-lp-system.png',
-    tech: ['TypeScript', 'React', 'Styled Components', 'Redux'],
+    tech: ['Wordpress', 'Shopify', 'Elementor', 'CSS'],
     github: 'https://github.com/your-repo',
     link: 'https://www.furevervital.infinityfreeapp.com/',
     demo: undefined,
@@ -60,7 +60,7 @@ export const projects = [
   {
     title: 'Kaching',
     description:
-      'Wallet interface with OAuth2 login. Built full app including Keyp API integration and transaction flow.',
+      'Hackathon Project--wallet interface with OAuth2 login. Built full app including Keyp API integration and transaction flow.',
     image: '/kaching.png',
     tech: ['TypeScript', 'React', 'Next.js', 'Chakra UI', 'Node.js'],
     github: 'https://github.com/mikestarrdev/KachingETHDenver',

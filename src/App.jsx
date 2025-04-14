@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import useActiveNavLink from './hooks/useActiveNavLink'
 import { Sidebar } from './components/Sidebar'
 import { MainContent } from './components/MainContent'
+import { CursorGradient } from './components/CursorGradient'
 
 const sections = [
   { id: 'about', label: 'About' },
@@ -24,6 +25,7 @@ export default function App() {
 
   return (
     <div className="font-inter bg-[#0a192f] text-[#8892b0]">
+      <CursorGradient />
       <div className="max-w-8xl mx-auto flex flex-col px-6 sm:px-10 lg:flex-row lg:px-12 lg:text-lg">
         <Sidebar
           sections={sections}
