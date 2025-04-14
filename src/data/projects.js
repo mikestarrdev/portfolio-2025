@@ -5,7 +5,7 @@ export const projects = [
       'Built a reusable WordPress + Elementor system to rapidly create both WooCommerce stores and high-converting squeeze pages.',
     image: '/am-lp-system.png',
     tech: ['Wordpress', 'Shopify', 'Elementor', 'CSS'],
-    github: 'https://github.com/your-repo',
+    github: undefined,
     link: 'https://www.furevervital.infinityfreeapp.com/',
     demo: undefined,
   },
