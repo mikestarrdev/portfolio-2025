@@ -25,7 +25,7 @@ export const Projects = ({ sectionRefs }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="my-4 mt-4 mr-6 aspect-[4/3] h-[150px] w-[200px] rounded object-cover shadow-lg lg:mt-1 lg:mb-0"
+                  className="my-4 mt-4 mr-6 aspect-[4/3] h-[150px] w-[200px] rounded border border-[#8892b0]/20 object-cover shadow-lg lg:mt-1 lg:mb-0"
                 />
                 <div className="md:max-w-4/5">
                   <h3 className="mb-2 flex items-center font-semibold text-[#ccd6f6]">
