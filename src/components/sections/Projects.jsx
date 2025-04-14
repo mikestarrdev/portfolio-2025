@@ -9,7 +9,7 @@ export const Projects = ({ sectionRefs }) => {
         sectionRefs.current.projects = el
       }}
     >
-      <div className="prose prose-invert xl:-ml-20">
+      <div className="prose prose-invert xl:-ml-22">
         <h2 className="sticky top-0 z-10 -ml-10 w-screen bg-[#0a192f] py-4 pl-10 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
           Projects
         </h2>
