@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const Sidebar = ({
   sections,
@@ -8,7 +8,7 @@ export const Sidebar = ({
   handleScrollToSection,
 }) => {
   return (
-    <aside className="w-full pt-14 pb-6 lg:sticky lg:top-0 lg:h-screen lg:pt-22">
+    <aside className="w-full pt-12 pb-6 sm:pt-14 md:pt-16 lg:sticky lg:top-0 lg:h-screen lg:pt-22">
       <div className="flex h-full flex-col justify-between pr-8 pl-4 lg:max-w-md lg:pr-0 xl:pl-30">
         <div className="space-y-10">
           <div className="space-y-4">
