@@ -22,4 +22,4 @@ This is the source code for my personal portfolio website, built to showcase my 
 
 ## License
 
-MIT
+[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
