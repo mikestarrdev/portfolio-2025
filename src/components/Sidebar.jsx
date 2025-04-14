@@ -52,15 +52,15 @@ export const Sidebar = ({
         </div>
 
         <div className="flex space-x-6 text-2xl text-gray-400 lg:mt-10 lg:mb-24 lg:text-2xl">
-          <a href="/" aria-label="GitHub">
+          <a href="https://github.com/mikestarrdev" target="_" aria-label="GitHub">
             <FaGithub />
           </a>
-          <a href="/" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/mike-starr" target="_" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="/" aria-label="Instagram">
+          {/* <a href="/" aria-label="Instagram">
             <FaInstagram />
-          </a>
+          </a> */}
         </div>
       </div>
     </aside>
