@@ -18,7 +18,7 @@ This is the source code for my personal portfolio website, built to showcase my 
 
 ## Live Site
 
-➡️ [https://MikeStarr.tech](https://mikestarr.tech)
+➡️ [mikestarr.tech](https://mikestarr.tech)
 
 ## License
 
