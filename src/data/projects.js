@@ -43,7 +43,7 @@ export const projects = [
     description:
       'Frontend interface to wrap and unwrap tokens. Modernized the app and refactored UI components.',
     image: '/wrapeth.png',
-    tech: ['TypeScript', 'React', 'Next.js', 'Chakra UI'],
+    tech: ['TypeScript', 'React', 'Next.js', 'CSS'],
     github: 'https://github.com/raid-guild/wrapeth',
     link: 'https://www.wrapeth.com/',
     demo: 'https://vimeo.com/766531266?share=copy',
@@ -51,18 +51,18 @@ export const projects = [
   {
     title: 'RaidGuild Design System',
     description:
-      'Upgraded component library with Storybook and Chakra UI. Built form components and wallet integrations.',
+      'Upgraded component library with Storybook and Chakra-UI. Built form components and wallet integrations.',
     image: '/raidguild-design-system.png',
-    tech: ['TypeScript', 'Chakra UI', 'Storybook'],
+    tech: ['TypeScript', 'Chakra-UI', 'Storybook'],
     github: 'https://github.com/raid-guild/design-system',
     link: undefined,
   },
   {
     title: 'Kaching',
     description:
-      'Hackathon Project--wallet interface with OAuth2 login. Built full app including Keyp API integration and transaction flow.',
+      'Hackathon project — a full-stack wallet interface with OAuth2 login. Built the entire app, including Keyp API integration, user auth flow, and transaction logic.',
     image: '/kaching.png',
-    tech: ['TypeScript', 'React', 'Next.js', 'Chakra UI', 'Node.js'],
+    tech: ['TypeScript', 'React', 'Next.js', 'CSS', 'Node.js'],
     github: 'https://github.com/mikestarrdev/KachingETHDenver',
     link: undefined,
     demo: 'https://vimeo.com/817957065',

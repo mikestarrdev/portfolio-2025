@@ -1,10 +1,10 @@
 export const Portfolio = () => {
   return (
-    <section>
+    <section className="lg:mt-26">
       <p className="w-full text-sm md:w-4/5 xl:-ml-20">
-        Coded in <span className="text-[#ccd6f6]">Cursor</span> by yours truly. Built with{' '}
+        Built in <span className="text-[#ccd6f6]">Cursor,</span> using{' '}
         <span className="text-[#ccd6f6]">React</span> and{' '}
-        <span className="text-[#ccd6f6]">Tailwind CSS</span>, deployed with{' '}
+        <span className="text-[#ccd6f6]">Tailwind CSS</span>, and deployed with{' '}
         <span className="text-[#ccd6f6]">Vercel</span>. All text is set in the{' '}
         <span className="text-[#ccd6f6]">Inter</span> typeface.{' '}
         <a
