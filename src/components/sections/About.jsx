@@ -7,7 +7,7 @@ export const About = ({ sectionRefs }) => {
       }}
     >
       <div className="xl:-ml-20">
-        <h2 className="sticky top-0 z-10 bg-[#0a192f] py-4 font-semibold text-[#ccd6f6] lg:hidden">
+        <h2 className="sticky top-2 z-10 bg-[#0a192f]/25 py-4 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
           About
         </h2>
 

@@ -9,7 +9,7 @@ export const Experience = ({ sectionRefs }) => {
       }}
     >
       <div className="xl:-ml-20">
-        <h2 className="text-md sticky top-0 z-10 bg-[#0a192fcc] py-4 font-bold text-[#ccd6f6] backdrop-blur-sm lg:hidden">
+        <h2 className="sticky top-2 z-10 bg-[#0a192f]/25 py-4 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
           Experience
         </h2>
         <div className="mt-6 flex flex-col space-y-12 md:space-y-2">
