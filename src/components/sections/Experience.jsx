@@ -9,10 +9,11 @@ export const Experience = ({ sectionRefs }) => {
       }}
     >
       <div className="xl:-ml-20">
-        <h2 className="sticky top-2 z-10 bg-[#0a192f]/25 py-4 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
+        <h2 className="sticky top-0 z-10 -ml-10 w-screen bg-[#0a192f] py-4 pl-10 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
           Experience
         </h2>
-        <div className="mt-6 flex flex-col space-y-12 md:space-y-2">
+
+        <div className="mt-6 flex flex-col space-y-12 sm:space-y-8 md:space-y-6 lg:space-y-2">
           {experience.map(({ title, description, date, tech, website }) => {
             const Wrapper = website ? 'a' : 'div'
             const wrapperProps = website

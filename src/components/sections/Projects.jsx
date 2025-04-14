@@ -10,9 +10,10 @@ export const Projects = ({ sectionRefs }) => {
       }}
     >
       <div className="prose prose-invert xl:-ml-20">
-        <h2 className="sticky top-2 z-10 bg-[#0a192f]/25 py-4 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
+        <h2 className="sticky top-0 z-10 -ml-10 w-screen bg-[#0a192f] py-4 pl-10 font-semibold text-[#ccd6f6] backdrop-blur-3xl lg:hidden">
           Projects
         </h2>
+
         <div className="lg:space-y-4">
           {projects.map(project => (
             <div
