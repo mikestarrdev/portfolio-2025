@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react'
 import { experience } from '../../data/experience'
 
 export const Experience = ({ sectionRefs }) => {
@@ -14,27 +15,30 @@ export const Experience = ({ sectionRefs }) => {
         </h2>
 
         <div className="mt-6 flex flex-col space-y-12 sm:space-y-8 md:space-y-6 lg:space-y-2">
-          {experience.map(({ title, description, date, tech, website }) => {
-            const Wrapper = website ? 'a' : 'div'
-            const wrapperProps = website
-              ? {
-                  href: website,
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                }
-              : {}
-
-            return (
-              <Wrapper
-                key={title}
-                {...wrapperProps}
-                className="flex cursor-pointer flex-col rounded-lg transition hover:bg-[#112240] sm:flex-row sm:space-x-8 lg:-ml-6 lg:p-6"
-              >
-                <div className="mb-2 w-full text-sm text-gray-400 sm:w-2/5 md:w-3/10 lg:mt-0.5 lg:mb-0 lg:text-sm">
+          {experience.map(({ title, description, date, tech, website }) => (
+            <div
+              key={title}
+              className="block w-full rounded-lg transition hover:bg-[#112240] lg:-ml-6 lg:p-6"
+            >
+              <div className="sm:space-x-8l flex min-h-full flex-col sm:flex-row sm:items-start">
+                <div className="mb-2 w-full text-sm text-gray-400 sm:w-2/5 md:w-3/10 lg:mb-0 lg:text-sm">
                   {date}
                 </div>
                 <div className="w-full sm:w-full">
-                  <h3 className="mb-2 font-semibold text-[#ccd6f6] md:text-base">{title}</h3>
+                  {website ? (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center"
+                    >
+                      <h3 className="mb-2 font-semibold text-[#ccd6f6] md:text-base">{title}</h3>
+                      <ArrowUpRight className="mb-1 ml-1 h-[14px] w-[14px] text-[#ccd6f6] transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
+                    </a>
+                  ) : (
+                    <h3 className="mb-2 font-semibold text-[#ccd6f6] md:text-base">{title}</h3>
+                  )}
+
                   <p className="mb-2 text-sm text-gray-400">{description}</p>
                   <div className="flex flex-wrap gap-2">
                     {tech.map(t => (
@@ -47,9 +51,9 @@ export const Experience = ({ sectionRefs }) => {
                     ))}
                   </div>
                 </div>
-              </Wrapper>
-            )
-          })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
