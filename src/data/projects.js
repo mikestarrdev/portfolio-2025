@@ -1,15 +1,5 @@
 export const projects = [
   {
-    title: 'Wordpress Landing Page System',
-    description:
-      'Built a reusable WordPress + Elementor system to rapidly create both WooCommerce stores and high-converting squeeze pages.',
-    image: '/am-lp-system.png',
-    tech: ['Wordpress', 'Shopify', 'Elementor', 'CSS'],
-    github: undefined,
-    link: 'https://www.furevervital.infinityfreeapp.com/',
-    demo: undefined,
-  },
-  {
     title: 'AirSwap Web',
     description:
       'Trading platform with over $4B in total volume. Contributed features and maintained the core interface.',
@@ -37,6 +27,16 @@ export const projects = [
     tech: ['TypeScript', 'JavaScript', 'React', 'Tailwind'],
     github: 'https://github.com/airswap/airswap-order-inspector',
     link: 'https://inspect.airswap.eth.limo/',
+  },
+  {
+    title: 'Wordpress Landing Page System',
+    description:
+      'Built a reusable WordPress + Elementor system to rapidly create both WooCommerce stores and high-converting squeeze pages.',
+    image: '/am-lp-system.png',
+    tech: ['Wordpress', 'Shopify', 'Elementor', 'CSS'],
+    github: undefined,
+    link: 'https://www.furevervital.infinityfreeapp.com/',
+    demo: undefined,
   },
   {
     title: 'WrapETH',
