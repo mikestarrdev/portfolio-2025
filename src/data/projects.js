@@ -24,7 +24,7 @@ export const projects = [
     description:
       'Staking interface and dashboard. Built the staking modal, wallet connection, and reusable UI components.',
     image: '/airswap-member-dashboard.png',
-    tech: ['TypeScript', 'React', 'Tailwind', 'Wagmi'],
+    tech: ['TypeScript', 'React', 'Tailwind'],
     github: 'https://github.com/airswap/airswap-member-dashboard',
     link: 'https://dao.airswap.eth.limo/',
     demo: 'https://vimeo.com/874258804?share=copy',
